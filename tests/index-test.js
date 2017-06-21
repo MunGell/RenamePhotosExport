@@ -39,5 +39,11 @@ describe('getDateFromDirectoryName', () => {
 });
 
 describe('getNewDirectoryName', () => {
+    it('returns date only', () => {
+        expect(getNewDirectoryName('20 February 2010')).to.equal('2010-02-20');
+    });
 
+    it('returns date and location', () => {
+        expect(getNewDirectoryName('San Francisco, 20 February 2010')).to.equal('2010-02-20 (San Francisco)');
+    });
 });

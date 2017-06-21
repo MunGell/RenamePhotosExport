@@ -24,7 +24,16 @@ const getDateFromDirectoryName = function (directory) {
 }
 
 const getNewDirectoryName = function (directory) {
+    let parts = directory.split(' ');
+    let location = '';
 
+    if (parts.length > 3) {
+        location = ' (' + parts.slice(0, parts.length - 3).join(' ').replace(/,$/, '') + ')';
+    }
+
+    let date = getDateFromDirectoryName(directory).format('YYYY-MM-DD');
+
+    return date + location;
 }
 
 module.exports = {
