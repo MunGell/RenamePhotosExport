@@ -6,9 +6,10 @@
   "scripts": {
     "test": "mocha tests"
   },
-  "author": "",
+  "author": "Shmavon Gazanchyan <sgazanchyan@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "commander": "^2.9.0",
     "moment": "^2.18.1"
   },
   "devDependencies": {

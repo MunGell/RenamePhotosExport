@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+'use strict';
+
+const program = require('commander');
+const pkg = require('../package.json');
+const {renameDirectories} = require('../');
+
+program.version(pkg.version);
+
+program
+    .command('* <basedir>')
+    .description('rename sub-directories in base directory')
+    .action(renameDirectories);
+
+program.parse(process.argv);
+
+if (!program.args.length) program.help();

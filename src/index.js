@@ -36,9 +36,21 @@ const getNewDirectoryName = function (directory) {
     return date + location;
 }
 
+const renameDirectories = function (basedir) {
+    let absoluteBaseDirectory = path.resolve(process.cwd(), basedir);
+
+    getDatedDirectories(getDirectories(absoluteBaseDirectory)).forEach(directory => {
+        fs.renameSync(
+            path.join(absoluteBaseDirectory, directory),
+            path.join(absoluteBaseDirectory, getNewDirectoryName(directory))
+        )
+    });
+}
+
 module.exports = {
     getDirectories,
     getDatedDirectories,
     getDateFromDirectoryName,
-    getNewDirectoryName
+    getNewDirectoryName,
+    renameDirectories
 }
