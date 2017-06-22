@@ -1,7 +1,7 @@
 {
-  "name": "rename-photo-export",
+  "name": "rename-photos-export",
   "version": "1.0.0",
-  "description": "Rename Photo.app export directories",
+  "description": "Rename Photos.app export directories",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha tests"
